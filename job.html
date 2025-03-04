@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng tin tuyển mẫu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<body>
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__close">+</div>
+        <ul class="offcanvas__widget">
+            <li><span class="icon_search search-switch"></span></li>
+            <li><a href="#"><span class="icon_heart_alt"></span>
+                <div class="tip">2</div>
+            </a></li>
+            <li><a href="#"><span class="fa fa-phone"></span>
+                <div class="tip">2</div>
+            </a></li>
+        </ul>
+        <div class="offcanvas__logo">
+            <a href="./index.html"><img src="img/logo.png" alt=""></a>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__auth">
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-3 col-lg-2">
+                    <div class="header__logo">
+                        <a href="./index.html"><img src="img/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-7">
+                    <nav class="header__menu">
+                        <ul>
+                            <li class="active"><a href="./index.html">Home</a></li>
+                            <!-- <li><a href="#">Men’s</a></li> -->
+                            <li><a href="a.html">Match</a></li>
+                            <li><a href="./shop.html">Model</a></li>
+                            <li><a href="#">Pages</a>
+                                <ul class="dropdown">
+                                    <!-- <li><a href="./product-details.html">Product Details</a></li>
+                                    <li><a href="./shop-cart.html">Shop Cart</a></li>
+                                    <li><a href="./checkout.html">Checkout</a></li> -->
+                                    <li><a href="./blog-details.html">Blog Details</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="job.html">Job</a></li>
+                            <li><a href="find-job.html"> Find Job</a></li>
+                            <li><a href="./blog.html">Blog</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__right">
+                        <div class="header__right__auth">
+                            <a href="#">Login</a>
+                            <a href="#">Register</a>
+                        </div>
+                        <ul class="header__right__widget">
+                            <li><span class="icon_search search-switch"></span></li>
+                            <li><a href="../ashion-master/shop-cart.html"><span class="icon_heart_alt"></span>
+                                <div class="tip">2</div>
+                            </a></li>
+                            <li><a href="#"><span class="fa fa-phone"></span>
+                                <div class="tip">2</div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="canvas__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <div class="container mt-4">
+        <button class="btn btn-primary mb-3" id="openModal">Đăng tin tuyển mẫu</button>
+        
+        <div class="modal fade" id="jobModal" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Thông tin tuyển mẫu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="jobForm">
+                            <input type="hidden" id="editIndex">
+                            <div class="mb-3">
+                                <label class="form-label">Tiêu đề:</label>
+                                <input type="text" id="jobTitle" class="form-control" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Loại mẫu:</label>
+                                <select id="modelType" class="form-select">
+                                    <option>Thời trang</option>
+                                    <option>Quảng cáo</option>
+                                    <option>Sản phẩm</option>
+                                    <option>Khác</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Mô tả công việc:</label>
+                                <textarea id="jobDesc" class="form-control" rows="3" required></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Liên hệ:</label>
+                                <input type="text" id="contact" class="form-control" required>
+                            </div>
+                            <button type="submit" class="btn btn-success w-100">Gửi</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <table class="table table-bordered">
+            <thead class="table-primary">
+                <tr>
+                    <th>Tiêu đề</th>
+                    <th>Loại mẫu</th>
+                    <th>Mô tả</th>
+                    <th>Liên hệ</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                    <th>Ứng viên</th>
+                </tr>
+            </thead>
+            <tbody id="jobList"></tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="applicantsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Danh sách ứng viên</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <ul id="applicantsList" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        let jobs = [];
+        let applicants = {};
+
+        document.getElementById("openModal").addEventListener("click", function() {
+            document.getElementById("jobForm").reset();
+            document.getElementById("editIndex").value = "";
+            new bootstrap.Modal(document.getElementById("jobModal")).show();
+        });
+
+        document.getElementById("jobForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const title = document.getElementById("jobTitle").value;
+            const type = document.getElementById("modelType").value;
+            const desc = document.getElementById("jobDesc").value;
+            const contact = document.getElementById("contact").value;
+            const status = "Chờ xác nhận";
+            const index = document.getElementById("editIndex").value;
+            
+            if (index === "") {
+                jobs.push({ title, type, desc, contact, status });
+                applicants[jobs.length - 1] = ["Nguyễn Văn A", "Trần Thị B", "Lê Văn C"];
+            } else {
+                jobs[index] = { title, type, desc, contact, status };
+            }
+            
+            renderJobs();
+            bootstrap.Modal.getInstance(document.getElementById("jobModal")).hide();
+        });
+
+        function renderJobs() {
+            const jobList = document.getElementById("jobList");
+            jobList.innerHTML = "";
+            jobs.forEach((job, index) => {
+                jobList.innerHTML += `<tr>
+                    <td>${job.title}</td>
+                    <td>${job.type}</td>
+                    <td>${job.desc}</td>
+                    <td>${job.contact}</td>
+                    <td>${job.status}</td>
+                    <td><button class="btn btn-info btn-sm" onclick="viewApplicants(${index})">Xem ứng viên</button></td>
+                </tr>`;
+            });
+        }
+
+        function viewApplicants(index) {
+    const list = document.getElementById("applicantsList");
+    list.innerHTML = applicants[index].map(name => `
+        <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>${name}</span> 
+            <div class="d-flex">
+                <button class="btn btn-primary btn-sm me-2 view-profile">Xem Profile</button>
+                <button class="btn btn-success btn-sm">Liên Hệ</button>
+            </div>
+        </li>
+    `).join('');
+    
+    document.querySelectorAll(".view-profile").forEach(button => {
+        button.addEventListener("click", () => {
+            window.location.href = "./product-details.html";
+        });
+    });
+
+    new bootstrap.Modal(document.getElementById("applicantsModal")).show();
+}
+
+
+    </script>
+</body>
+</html>
